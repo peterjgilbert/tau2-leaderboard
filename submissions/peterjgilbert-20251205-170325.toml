@@ -1,0 +1,13 @@
+[green_agent]
+image = "ghcr.io/komyo-ai/agentbeats-tutorial-tau2-evaluator:latest"
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}", LOG_LEVEL = "INFO" }
+
+[[participants]]
+agentbeats_id = "019aef64-98b9-7aa0-a3e5-1c4e7994cf25"
+name = "agent"
+image = "ghcr.io/komyo-ai/agentbeats-tutorial-tau2-agent:latest"
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
+
+[config]
+domain = "airline"
+num_tasks = 4
