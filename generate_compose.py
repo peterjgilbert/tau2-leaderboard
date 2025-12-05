@@ -47,7 +47,7 @@ services:
       - agent-network
 
 {participant_services}
-  agentbeats-:
+  agentbeats-client:
     image: ghcr.io/komyo-ai/agentbeats-client:v1.0.0
     platform: linux/amd64
     container_name: agentbeats-client
@@ -143,7 +143,7 @@ def generate_docker_compose(scenario: dict[str, Any]) -> str:
         green_env=format_env_vars(green.get("env", {})),
         green_depends=format_depends_on(participant_names),
         participant_services=participant_services,
-        _depends=format_depends_on(all_services)
+        client_depends=format_depends_on(all_services)
     )
 
 
